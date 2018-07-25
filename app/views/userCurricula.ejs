@@ -1,0 +1,37 @@
+<% include template.ejs %>
+
+<% if (userLoggedIn == username) { %>
+
+    <% if (curricula.length === 0) { %>
+        <div class="msg">
+        You do not have any curriculum. Start by creating <a href="http://abcde:4200/curriculum">one!</a>
+    <% } else { %>
+        <div id="curricula-username" class="title"><%= username %>'s curricula</div>
+        <div class="user-curricula">
+        <% curricula.forEach(curriculum => { %>
+            <div class="curriculum-title">
+            <span class="edit-curriculum"><a href="/curriculum/edit/<%= curriculum._id %>"><img src="/img/open-button.png" alt="edit" width="16px" /></a></span>
+            <span class="delete-curriculum"><img data-id="<%= curriculum._id %>" src="/img/close-button.png" alt="remove" width="16px" /></span>
+            <a href="/curriculum/<%= curriculum._id %>"><%= curriculum.curriculumTitle %></a>
+            </div>
+        <% })} %> 
+        </div>
+         
+<% } else { %>
+
+    <% if (curricula.length === 0) { %>
+        <div class="msg">
+        The user does not have any curriculum.
+    <% } else { %>
+        <div id="curricula-username" class="title"><%= username %>'s curricula</div>
+        <div class="user-curricula">
+        <% curricula.forEach(curriculum => { %>
+            <div class="curriculum-title">
+                <a href="/curriculum/<%= curriculum._id %>"><%= curriculum.curriculumTitle %></a>
+            </div>
+    <% })} %> 
+        </div>
+        
+<% } %>
+
+<% include templateFooter.ejs %>

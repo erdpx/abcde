@@ -1,0 +1,21 @@
+<% include template.ejs %>
+
+<% if (userLoggedIn == username) { %>
+    <% if (curricula.length === 0) { %>
+        <div class="msg">
+        You do not have any saved curriculum. Start by searching for one!</a>
+    <% } else { %>
+    <div id="curricula-username" class="title"><%= username %>'s saved curricula</div>
+    <div class="user-curricula">
+        <% curricula.forEach(curriculum => { %>
+            <div class="curriculum-title">
+                <a href="/curricula/saved/<%= curriculum._id %>"><%= curriculum.curriculumTitle %></a>
+                <span class="edit-curriculum"><a href="/saved/curriculum/edit/<%= curriculum.id %>"><img src="/img/open-button.png" alt="edit" width="16px" /></a></span>
+                <span class="delete-curriculum"><img data-id="<%= curriculum.id %>" src="/img/close-button.png" alt="remove" width="16px" /></span>
+            </div>       
+        <% })} %> 
+    </div>
+         
+<% } %>
+
+<% include templateFooter.ejs %>

@@ -1,0 +1,7 @@
+<% include template.ejs %>
+
+<div class="title">edit saved curriculum</div>
+
+<form action="/saved/curriculum/edit/<%= curriculum._id %>" method="POST" id="curriculum-form">
+
+<% include editCurriculumTemplate.ejs %>

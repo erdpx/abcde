@@ -1,0 +1,395 @@
+/* Font import */
+@import url('https://fonts.googleapis.com/css?family=Numans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* Variables declaration */
+:root {
+    --main-color: #232323;
+    --main-txt-color: #fff;
+    --nav-color: #464646;
+    --body-bg-color: #e0e0e0;
+    --main-bg-color: #555;
+    --bg-color: #616161;
+    --main-font: 'Numans';
+    --font: 'Montserrat';
+}
+
+/* Apply browser margin and padding to 0 as default */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* main page style*/
+body {
+    font-family: var(--font), sans-serif;
+    font-size: 20px;
+    text-align: center;
+    background-color: var(--body-bg-color);
+}
+
+.header h1 {
+    font-family: var(--main-font), sans-serif;
+    font-size: 10em;
+    font-weight: normal;
+    color: var(--main-txt-color);
+    background-color: var(--main-color);
+}
+
+.title {
+    margin-top: 2rem;
+    font-family: var(--font), sans-serif;
+    font-size: 2em;
+    color: var(--main-txt-color);
+    background-color: transparent;
+}
+
+.nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+    background-color: var(--nav-color);
+}
+
+a, .nav-bar > li {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--main-txt-color);
+}
+
+.container a, .nav-bar > li {
+    font-family: var(--font), sans-serif;
+    padding: 0.5rem;
+}
+
+.msg a {
+    padding: 0;
+    color: var(--body-bg-color);
+    text-decoration: underline;
+}
+
+.msg a:hover {
+    color: var(--main-color);
+}
+
+/* register and login form style*/
+#menu .form {
+    display: none;
+}
+
+.form {
+    background-color: var(--bg-color);
+    height: 4rem;
+    display: table;
+    width: 100%;
+}
+
+#menu .form.active {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width: 100vw;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    border: 2px solid var(--nav-color);
+    border-radius: 2px;
+    outline: none;
+    background-color: transparent;
+    padding: 0.5rem;
+    color: var(--main-txt-color);
+    font-family: var(--font), sans-serif;
+    margin-left: auto;
+    width: 12.5rem;
+}
+
+#register-form .valid-input {
+    border: 2px solid #578759;
+}
+
+#register-form .invalid-input {
+    border: 2px solid #995E49;
+}
+
+::placeholder {
+    color: var(--main-txt-color);
+}
+
+/* buttons style */
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--main-txt-color);
+    text-align: center;
+    font-size: 1em;
+    text-decoration: none;
+    font-family: var(--font), sans-serif;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+button:hover:not(#register):not(#login) {
+    color: var(--main-color);
+}
+
+button:active:not(#register):not(#login) {
+    color: #909090;
+}
+
+/* search box style */ 
+#search-box {
+    display: inline;
+    border: none;
+    outline: none;
+    color: var(--main-txt-color);
+    font-family: var(--font), sans-serif;
+    font-size: 1em;
+    text-align: center;
+    background-color: transparent;
+}
+
+#search-box:focus {
+    border-bottom: solid 1px var(--main-color);
+}
+
+/* curriculum form style */ 
+#curriculum-form {
+    margin-top: 0;
+    padding-top: 3rem;
+    background-color: #707070;
+}
+
+#curriculum-sections {
+    margin-bottom: 3rem;
+}
+
+#curriculum-form .curriculum-title-form {
+    border: 2px solid var(--nav-color);
+    border-radius: 5px;
+}
+
+#curriculum-sections .section-title {
+    border: 2px solid var(--nav-color);
+    border-radius: 4px;
+    margin-top: 4rem;
+}
+
+#curriculum-sections .section-content,
+#curriculum-sections .content-link {
+    margin: 1rem auto;
+    display: block;
+    border: 2px solid var(--nav-color);
+    border-radius: 4px;
+}
+
+#curriculum-sections .content-link {
+    margin-bottom: 2rem;
+}
+
+.title {
+    margin: 0;
+    padding: 2rem;
+    background-color: var(--bg-color);
+}
+
+.curriculum-textarea,
+.section-textarea {
+    margin: 1rem auto 2rem;
+    display: block;
+    border: 2px solid var(--nav-color);
+    border-radius: 4px;
+}
+
+.curriculum-textarea:focus,
+.section-textarea:focus {
+    width: 50vw;
+    height: 10vh;
+}
+
+#curriculum-form button {
+    margin-bottom: 3rem;
+}
+
+/* flash msg style */
+.msg {
+    background-color: var(--main-bg-color);
+    font-family: var(--font);
+    color: var(--body-bg-color);
+}
+
+#user-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    background-color: var(--main-bg-color);
+}
+
+/* user curricula page style */
+.user-curricula {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+
+#curricula-username {
+    padding: 1rem;
+}
+
+.curriculum-title {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: var(--main-color);
+    width: 10rem;
+    height: 10rem;
+    border-radius: 2px;
+    padding: 1rem;
+    margin: 2rem;
+    color: var(--main-txt-color);
+}
+
+.curriculum-title span {
+    display: none;
+}
+
+.curriculum-title:hover span {
+    display: initial;
+}
+
+.curriculum-title .delete-curriculum {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.curriculum-title .edit-curriculum {
+    position: absolute;
+    top: 4px;
+    right: 25px;
+}
+
+.curriculum-title a,
+.userCurriculum h2,
+.curriculum-title p {
+    color: var(--main-txt-color);
+    font-family: var(--font), sans-serif;
+    font-weight: normal;
+    outline: none;
+}
+
+.curriculum-title a {
+    font-size: 1em;
+    outline: none;
+    width: 100vw;
+}
+
+.curriculum-title p {
+    font-size: 0.8em;
+}
+
+.delete-curriculum:hover {
+    cursor: pointer;
+}
+
+/* index page, curricula style */
+#index-content #curriculum-li {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+    margin-bottom: 2rem;
+}
+
+#index-content h2 {
+    font-size: 4rem;
+}
+
+#index-content .curriculum-title {
+    width: 18rem;
+    height: 15rem;
+    font-size: 1.2em;
+}
+
+#index-content .curriculum-title:nth-child(2) {
+    background-color: var(--nav-color);
+}
+
+#index-content .curriculum-title:nth-child(3) {
+    background-color: #555;
+}
+
+#index-content .curriculum-title:nth-child(4) {
+    background-color: #909090;
+}
+
+#index-content .curriculum-title:nth-child(4) a:hover {
+    text-decoration-line: underline;
+}
+
+/* user's curriculum page style */
+.userCurriculum #curriculum-title {
+    font-size: 2em;
+    background-color: var(--bg-color);
+    padding: 0.5rem;
+}
+
+.userCurriculum .section-title {
+    font-size: 1.5em;
+    background-color: var(--main-bg-color);
+    padding: 1rem;
+}
+
+.userCurriculum .explanation {
+    font-size: 1rem;
+    margin: 0 auto;
+    text-align: justify;
+    text-align-last: center;
+    font-weight: normal;
+    font-family: var(--font), sans-serif;
+    color: var(--main-txt-color);
+    background-color: var(--bg-color);
+    padding: 1rem;
+    padding-top: 0.5rem;
+}
+
+.curriculum-content li,
+#curriculum-li {
+    color: var(--main-txt-color);
+    font-size: 1em;
+    font-family: var(--font), sans-serif;
+    background-color: #707070;
+    padding: 1rem;
+    border-top: 1px solid var(--bg-color);
+    list-style: none;
+}
+
+.curriculum-content a:hover {
+    border-bottom: 1px solid #fff;
+}
+
+#save-curriculum {
+    background-color: var(--nav-color);
+    margin: auto;
+    font-family: var(--font), sans-serif;
+    font-size: 1em;
+    color: var(--main-txt-color);
+    border: 1px solid var(--bg-color);
+    padding: 0.5rem;
+}
+
+#save-curriculum:hover {
+    background-color: var(--bg-color);
+    cursor: pointer;
+}
+
+#curriculum-form .invalid-input {
+    border: 2px solid #995E49;
+}

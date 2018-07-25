@@ -1,0 +1,34 @@
+<% include template.ejs %>
+
+<div class="userCurriculum">
+
+    <h2 id="curriculum-title"><%= curriculum.curriculumTitle %></h2>
+    <% if (curriculum.curriculumExplanation) { %>
+        <h3 class="explanation"><%= curriculum.curriculumExplanation %></h3>
+    <% } %>
+
+    <% curriculum.curriculumSections.forEach(c => { %>
+        <ul class="curriculum-content">
+            <li class="section-title"><%= c.sectionTitle %></li>
+            <% if (c.sectionExplanation) { %>
+                <p class="explanation"><%= c.sectionExplanation %></p>
+            <% } %>
+            <% for(let i = 0; i < c.content.length; i++) { %>
+                <% if (!Array.isArray(c.content) && c.contentLink[i] !== undefined)  { %>
+                <li><a href="<%= c.contentLink %>" target="_blank"><%= c.content %></a></li>
+                <% i = c.content.length %>
+                <% } %>
+                <% if (Array.isArray(c.contentLink) && c.contentLink[i] !== undefined)  { %>
+                    <li><a href="<%= c.contentLink[i] %>" target="_blank"><%= c.content[i] %></a></li>
+            <% }} %>
+        </ul>
+    <% }) %>
+
+    <% if (userLoggedIn && !saved) {%>
+        <div id="curriculum-li"></div>
+        <div id="save-curriculum">save curriculum</div>
+    <% } %>
+    
+</div>
+
+<% include templateFooter.ejs %>

@@ -1,0 +1,23 @@
+<% include template.ejs %>
+
+<div class="title">new curriculum</div>
+
+<form action="/curriculum" method="POST" id="curriculum-form">
+    <input autofocus type="text" class="curriculum-title-form" name="curriculumTitle" placeholder="curriculum title"/>
+    <textarea class="curriculum-textarea" name="curriculumExplanation" placeholder="curriculum explanation"></textarea>
+
+    <div id="curriculum-sections">
+        <div class="curriculum-section" name="curriculumSection0">
+            <input type="text" class="section-title" name="sectionTitle" placeholder="Section Title"/>
+            <textarea class="section-textarea" name="sectionExplanation0" placeholder="section explanation"></textarea>
+
+            <input type="text" class="section-content" name="sectionContent0" placeholder="content"/>
+            <input type="text" class="content-link" name="contentLink0" placeholder="content link"/>
+        </div>
+    </div>
+    
+    <button type="button" id="new-section-btn">create new section</button>
+    <button type="button" id="submit-curriculum">submit curriculum</button>
+</form>
+
+<% include templateFooter.ejs %>

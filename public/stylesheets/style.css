@@ -1,0 +1,97 @@
+input#dropdown-menu, .container label {
+    display: none;
+}
+
+/* Apply when width is less than or equal to 760px */
+@media screen and (max-width: 760px) {
+    body .header h1 {
+        font-size: 5em;
+        text-align: center;
+    }
+    
+    .nav-bar > li,
+    #user-menu > li {
+        flex: 1 1 100%;
+        padding: 1rem;
+        background: var(--main-bg-color);
+    }
+
+    .nav-bar a,
+    .nav-bar > li,
+    #user-menu > li  {
+        border-bottom: 1px solid var(--main-color);
+    }
+
+    .nav-bar li:hover {
+        text-decoration-line: underline; 
+    }
+    
+    #user-menu a:hover {
+        padding: 0;
+        border-bottom: 1px solid var(--main-txt-color);
+    }
+
+    .nav-bar > li:hover,
+    #user-menu > li:hover  {
+        background-color: var(--bg-color);
+        border-radius: 2px;
+    }
+
+    .nav-bar a:active,
+    .nav-bar > li:active,
+    #user-menu > li:active  {
+        text-decoration-line: none; 
+        border: 2px solid var(--main-color);
+        border-radius: 2px;
+        background-color: var(--main-color);
+    }
+
+    /* Dropdown menu */
+    .container label{
+        display: block;
+        cursor: pointer;
+        background: url(/img/open-button.png) no-repeat center center;
+        background-color: var(--nav-color);
+        padding: 1rem;
+    }
+    
+    .menu {
+        max-height: 0;
+        overflow: hidden;
+    }
+    
+    input:checked ~ .menu {
+        max-height: 100%;
+        transition: all ease 1s;
+    }
+
+    input:checked ~ label {
+        background: url(/img/close-button.png) no-repeat center center;
+        background-color: var(--nav-color);
+    }
+
+    .container .curriculumTitle span{
+        display: inline-block;
+    }
+
+    /* login and register forms */
+    .form input,
+    .form button {
+        margin: 5px auto;
+        display: table;
+    }
+
+    /* user-menu nav style */
+    .container #user-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+        background-color: var(--bg-color);
+    }
+
+    /* index page */
+    .container #index-content #curriculum-li {
+            padding: 1rem;
+            margin-bottom: 0;
+    }
+}
